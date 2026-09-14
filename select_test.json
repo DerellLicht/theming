@@ -1,0 +1,27 @@
+{
+  "_readme": "PrettyReMark color overrides. Edit while the program is closed -- changes are only read at startup.",
+  "Light": {
+    "TextColor": "#1F2328",
+    "BackgroundColor": "#FFFFFF",
+    "SidebarBackgroundColor": "#F6F8FA",
+    "SidebarFilenameColor": "#1F2328",
+    "SidebarPathColor": "#656D76",
+    "SidebarActiveBackgroundColor": "#DDF4FF",
+    "SidebarActiveBarColor": "#0969DA",
+    "SidebarHoverBackgroundColor": "#E8EBEF"
+  },
+  "Dark": {
+    "TextColor": ["Default Style", "fgColor"],
+    "BackgroundColor": ["Default Style", "bgColor"],
+    "SidebarBackgroundColor": ["Change History modified", "bgColor"],
+    "SidebarFilenameColor": ["Selected text colour", "fgColor"],
+    "SidebarPathColor": ["Tab color 1", "bgColor"],
+    "SidebarActiveBackgroundColor": ["Selected text colour", "bgColor"],
+    "SidebarActiveBarColor": ["Edge colour", "fgColor"],
+    "SidebarHoverBackgroundColor": "#1C2129",
+    "BadEntry1": ["Nonexistent Name", "bgColor"],
+    "BadEntry2": ["Caret colour", "bgColor"],
+    "BadEntry3": ["Edge colour", "notAField"],
+    "BadEntry4": "just one string not two"
+  }
+}

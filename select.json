@@ -1,0 +1,24 @@
+{
+  "_readme": "PrettyReMark color overrides. Edit while the program is closed -- changes are only read at startup.",
+  "Light": {
+    "TextColor": "#1F2328",
+    "BackgroundColor": "#FFFFFF",
+    "SidebarBackgroundColor": "#F6F8FA",
+    "SidebarFilenameColor": "#1F2328",
+    "SidebarPathColor": "#656D76",
+    "SidebarActiveBackgroundColor": "#DDF4FF",
+    "SidebarActiveBarColor": "#0969DA",
+    "SidebarHoverBackgroundColor": "#E8EBEF"
+  },
+  "Dark": {
+    "TextColor": ["Default Style", "fgColor"],
+    "BackgroundColor": ["Default Style", "bgColor"],
+    "SidebarBackgroundColor": ["Default Style", "bgColor"],
+    ; "SidebarFilenameColor": ["Tab color dark mode 2", "bgColor"],
+    "SidebarFilenameColor": ["Mark Style 4", "bgColor"],
+    "SidebarPathColor": ["Tab color 1", "bgColor"],
+    "SidebarActiveBackgroundColor": ["Selected text colour", "bgColor"],
+    "SidebarActiveBarColor": ["Edge colour", "fgColor"],
+    "SidebarHoverBackgroundColor": "#1C2129"
+  }
+}
