@@ -34,7 +34,7 @@
    @echo.
    @echo. NOTES:
    @echo    push: This expects only the theme name, located in colors folder
-   @echo          This will be expanded to [colors\colors.^<theme_name^>.json
+   @echo          This will be expanded to [colors\colors.^<theme_name^>.json]
    @echo.
    @echo    pull: and build: 
    @echo       These will result in a [colors.json] file in current folder.
