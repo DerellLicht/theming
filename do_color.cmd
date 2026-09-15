@@ -15,7 +15,7 @@
 :usage
    @echo USAGE:
    @echo     do_color [command]
-   @echo     [command] = [build] [test] [push] [pull]
+   @echo     [command] = [build] [test] [push] [pull] [swatch]
    @echo     do_color [command] ^<theme_file_name^> [^<test_selection_file^>]
    @echo.
    @echo     Exactly *one* [command] is required
@@ -23,7 +23,7 @@
    @echo.
    @echo ARGUMENTS
    @echo    ^<theme_file_name^>  [mandatory]
-   @echo    ^<test_selection_file^>  [optional]
+   @echo    ^<test_selection_file^>  [optional, only for [test] command]
    @echo.
    @echo    Examples: 
    @echo    do_color build themes\Zenburn.xml
@@ -44,29 +44,28 @@
    @goto :eof
 
 :build
-   @if /I "%~2"=="" goto :usage
+   @IF NOT EXIST "%~2" GOTO :usage
    python theme_to_colors.py %2
    @goto :eof
 
 :test
-   @if /I "%~2"=="" goto :usage 
+   @IF NOT EXIST "%~2" GOTO :usage
    python theme_to_colors.py %2 %3
    @goto :eof
 
 :push
    SET "target=colors\colors.%2.json"
-   @IF NOT EXIST "%target%" (
-      GOTO :usage
-   )
-   @COPY "%target%" "C:\Users\dan7m\AppData\Roaming\PrettyReMark\colors.json"
+   @IF NOT EXIST "%target%" GOTO :usage
+   @COPY "%target%" "%APPDATA%\PrettyReMark\colors.json"
    @goto :eof
 
 :pull
-   @copy C:\Users\dan7m\AppData\Roaming\PrettyReMark\colors.json .
+   @copy %APPDATA%\PrettyReMark\colors.json .
    @echo colors.json needs to be renamed to something else
    @goto :eof
 
 :swatch
+   @IF NOT EXIST "%~2" GOTO :usage
    python theme_swatch.py %2
    move themes\*.html swatches
    
