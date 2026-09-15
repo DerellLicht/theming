@@ -12,12 +12,12 @@
   },
   "Dark": {
     "TextColor": "#C3BE98",
-    "BackgroundColor": "#1A0F0B",
+    "BackgroundColor": "#003300",
     "SidebarBackgroundColor": "#1A0F0B",
-    "SidebarFilenameColor": "#568048",
+    "SidebarFilenameColor": "#669755",
     "SidebarPathColor": "#F3F0CB",
     "SidebarActiveBackgroundColor": "#372017",
     "SidebarActiveBarColor": "#EEEEEC",
-    "SidebarHoverBackgroundColor": "#1C2129"
+    "SidebarHoverBackgroundColor": "#C29F85"
   }
 }
