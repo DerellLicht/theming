@@ -11,13 +11,13 @@
     "SidebarHoverBackgroundColor": "#E8EBEF"
   },
   "Dark": {
-    "TextColor": "#FF8000",
-    "BackgroundColor": "#002F00",
-    "SidebarBackgroundColor": "#002D00",
-    "SidebarFilenameColor": "#00CE00",
-    "SidebarPathColor": "#00A8F9",
-    "SidebarActiveBackgroundColor": "#1A2332",
-    "SidebarActiveBarColor": "#4493F8",
+    "TextColor": "#5F5F00",
+    "BackgroundColor": "#D7D7AF",
+    "SidebarBackgroundColor": "#D7D7AF",
+    "SidebarFilenameColor": "#87005F",
+    "SidebarPathColor": "#F3F0CB",
+    "SidebarActiveBackgroundColor": "#D7FF87",
+    "SidebarActiveBarColor": "#AFAF87",
     "SidebarHoverBackgroundColor": "#1C2129"
   }
 }

@@ -10,16 +10,16 @@
 @if /I "%~1"=="test" goto :test
 @if /I "%~1"=="push" goto :push
 @if /I "%~1"=="pull" goto :pull
+@if /I "%~1"=="swatch" goto :swatch
 
 :usage
    @echo USAGE:
    @echo     do_color [command]
    @echo     [command] = [build] [test] [push] [pull]
-   @echo     do_color ^<theme_file_name^> [^<test_selection_file^>]
+   @echo     do_color [command] ^<theme_file_name^> [^<test_selection_file^>]
    @echo.
    @echo     Exactly *one* [command] is required
    @echo. DETAILS:
-   @echo.
    @echo.
    @echo ARGUMENTS
    @echo    ^<theme_file_name^>  [mandatory]
@@ -28,8 +28,19 @@
    @echo    Examples: 
    @echo    do_color build themes\Zenburn.xml
    @echo    do_color test themes\Zenburn.xml select_test.json
-   @echo    do_color push colors\colors.choco.json
+   @echo    do_color push choco
    @echo    do_color pull
+   @echo    do_color swatch themes\Monokai.xml
+   @echo.
+   @echo. NOTES:
+   @echo    push: This expects only the theme name, located in colors folder
+   @echo          This will be expanded to [colors\colors.^<theme_name^>.json
+   @echo.
+   @echo    pull: and build: 
+   @echo       These will result in a [colors.json] file in current folder.
+   @echo       They will need to be renamed to colors.^<theme_name^>.json
+   @echo       and then be moved to [colors] folder
+   @echo.
    @goto :eof
 
 :build
@@ -38,15 +49,16 @@
    @goto :eof
 
 :test
-   @if /I "%~2"=="" goto :isage 
-   python theme_to_colors.py %1 %2
+   @if /I "%~2"=="" goto :usage 
+   python theme_to_colors.py %2 %3
    @goto :eof
 
 :push
-   @IF NOT EXIST "%~2" (
-      @goto :usage
+   SET "target=colors\colors.%2.json"
+   @IF NOT EXIST "%target%" (
+      GOTO :usage
    )
-   copy %2 C:\Users\dan7m\AppData\Roaming\PrettyReMark\colors.json
+   @COPY "%target%" "C:\Users\dan7m\AppData\Roaming\PrettyReMark\colors.json"
    @goto :eof
 
 :pull
@@ -54,3 +66,7 @@
    @echo colors.json needs to be renamed to something else
    @goto :eof
 
+:swatch
+   python theme_swatch.py %2
+   move themes\*.html swatches
+   
